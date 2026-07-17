@@ -1,0 +1,8 @@
+pandas
+pyarrow
+numpy
+beautifulsoup4
+rank_bm25
+sentence-transformers
+faiss-cpu
+nltk
