@@ -9,9 +9,9 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 from nltk.stem.snowball import SnowballStemmer
 
 
-articles = pd.read_feather('articles.f')
-calibration = pd.read_feather('calibration.f')
-test = pd.read_feather('test.f')
+articles = pd.read_feather('data/articles.f')
+calibration = pd.read_feather('data/calibration.f')
+test = pd.read_feather('data/test.f')
 
 nltk.download('punkt', quiet=True)
 stemmer = SnowballStemmer("russian")
