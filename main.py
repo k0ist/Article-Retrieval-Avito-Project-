@@ -43,7 +43,7 @@ def tokenize_stem(text):
     tokens = re.findall(r'\w+', text.lower())
     return [stemmer.stem(w) for w in tokens]
 
-def rrf_fusion(rankings, k=60, top_k=10):
+def rrf(rankings, k=60, top_k=10):
     fused_scores = {}
     for ranking in rankings:
         for rank, (article_id, _) in enumerate(ranking):
@@ -63,7 +63,7 @@ def eval_map_10(calibration, bm25_retriever, embedding_retriever, reranker, id_t
         bm25_res = bm25_retriever.search(q, top_k=50)
         emb_res = emb_results_batch[idx]
 
-        candidates_ids = rrf_fusion([bm25_res, emb_res], top_k=50)
+        candidates_ids = rrf([bm25_res, emb_res], top_k=50)
         pairs = [[q, id_to_text[doc_id]] for doc_id in candidates_ids]
         scores = reranker.predict(pairs, show_progress_bar=False)
 
