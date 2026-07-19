@@ -109,5 +109,5 @@ AP@10 оценивает не только сам факт нахождения
 
 ## Используемые модели
 
-| Эмбеддинги | `intfloat/multilingual-e5-large` |
-| Reranker | `BAAI/bge-reranker-v2-m3` |
+Embedding -  `intfloat/multilingual-e5-large`
+Reranker - `BAAI/bge-reranker-v2-m3`
